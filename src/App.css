@@ -3,11 +3,10 @@
 /*Rood #dd3038 / Oranje #e7613a / Licht oranje #FDF4F2 / Zwart #292929 (voor standaard tekst) / Wit #FFFFFF*/
 
 * {
-  margin: 0;
   box-sizing: border-box;
 }
 
-h1 {
+h1, h2, h3 {
   font-family: 'Quicksand', sans-serif;
   }
 

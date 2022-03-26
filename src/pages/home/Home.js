@@ -4,7 +4,7 @@ import axios from "axios";
 import {Link} from "react-router-dom";
 
 const Home = () => {
-const [redditPost, setRedditPost] =useState();
+const [redditPost, setRedditPost] =useState(null);
 
     useEffect(() => {
         async function fetchData() {
@@ -27,9 +27,9 @@ const [redditPost, setRedditPost] =useState();
                 <ul>
                     {redditPost.map((posts) => {
                     return(
-                        <li key={posts.data.created}>
-                            <h1>{posts.data.title}</h1>
-                            <Link to="/subreddit/:subredditId">{posts.data.subreddit_name_prefixed}</Link>
+                        <li key={posts.data.id}>
+                            <h2><a href={posts.data.url} target="_blank">{posts.data.title}</a></h2>
+                            <Link to={`subreddit/${posts.data.subreddit}`}>{posts.data.subreddit_name_prefixed}</Link>
                             <p>Comments {posts.data.num_comments} - Ups {posts.data.ups}</p>
                         </li>
                     )})

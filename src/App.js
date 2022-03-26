@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import {Route, Switch} from "react-router-dom";
 import React from "react";
@@ -21,7 +20,14 @@ import Header from "./components/header/Header";
 // 4. Ga het weergeven op de pagina voor 1 post.
 // 5. Probeer 15 stuks op de pagina te krijgen.
 // 6. Zorg ervoor dat de naam van de subreddit een link wordt die doorlinkt naar de betreffende subreddit pagina.
-// 7. Zorg ervoor dat als de gebruiker op de titel klikt hij wordt doorgelinkt naar de post op reddit.com
+// 7. Zorg ervoor dat als de gebruiker op de titel klikt hij wordt doorgelinkt naar de post op reddit.com.
+
+// Opdracht 4:
+// 1. Haal via een Get request de data binnen.
+// 2. Log de data in de console om de structuur te zien.
+// 3. Maak een state aan.
+// 4. Zorg ervoor dat de juiste informatie op de pagina te zien is.
+// 5. Maak de take me back link.
 
 function App() {
   return (
