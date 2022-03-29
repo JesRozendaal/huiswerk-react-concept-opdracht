@@ -35,11 +35,11 @@ const Subreddit = () => {
                 </article>
             </>
             }
-            <div className="svg-button">
-                <img src={back} alt="back-button" /><Link to="/">Take me back</Link>
-            </div>
+                <img src={back} alt="back-button"/><Link to="/">Take me back</Link>
+
                     </div>
     );
+
 };
 
 export default Subreddit;

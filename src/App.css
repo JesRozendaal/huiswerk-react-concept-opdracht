@@ -3,13 +3,55 @@
 /*Rood #dd3038 / Oranje #e7613a / Licht oranje #FDF4F2 / Zwart #292929 (voor standaard tekst) / Wit #FFFFFF*/
 
 * {
+  margin: 0;
   box-sizing: border-box;
 }
 
 h1, h2, h3 {
   font-family: 'Quicksand', sans-serif;
+  color:#292929
   }
 
 p {
   font-family: 'Roboto Condensed', sans-serif;
+  color: #292929;
 }
+
+.outer-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.inner-container {
+  flex-basis: 1200px;
+  flex-shrink: 1;
+  flex-grow: 0;
+}
+
+header {
+  background: linear-gradient(to right, #e7613a, #dd3038);
+}
+
+main {
+  background-color: #FDF4F2;
+}
+
+nav {
+  border: 1px dotted black;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-basis: 300px;
+}
+
+

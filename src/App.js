@@ -1,9 +1,9 @@
 import './App.css';
-import {Route, Switch} from "react-router-dom";
+import {NavLink, Route, Switch} from "react-router-dom";
 import React from "react";
 import Home from "./pages/home/Home";
 import Subreddit from "./pages/subreddit/Subreddit";
-import Header from "./components/header/Header";
+import Logo from "./assets/logo.png";
 
 // Stappenplan
 // Opdracht 2:
@@ -32,7 +32,35 @@ import Header from "./components/header/Header";
 function App() {
   return (
     <div>
-      <Header />
+        <header className="outer-container">
+            <div className="inner-container">
+                <nav>
+                    <ul>
+                    <li>
+                        <NavLink to="/">
+                        Hottest Posts
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="https://www.reddit.com">
+                        Reddit
+                    </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/subreddit/:subredditId">
+                        Memes
+                    </NavLink>
+                    </li>
+                    </ul>
+                </nav>
+            </div>
+            <div className="header-content">
+                {/*<img src={Logo} alt="Reddit logo" className="reddit-logo"/>*/}
+                {/*<h1>Reddit</h1>*/}
+            </div>
+        </header>
+
+        <main>
       <Switch>
         <Route exact path="/">
           <Home />
@@ -41,6 +69,7 @@ function App() {
           <Subreddit />
         </Route>
       </Switch>
+        </main>
     </div>
   );
 }

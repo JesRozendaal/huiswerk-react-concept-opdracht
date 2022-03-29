@@ -24,17 +24,16 @@ const [redditPost, setRedditPost] =useState(null);
         <div>
             {redditPost &&
             <>
-                <ul>
                     {redditPost.map((posts) => {
                     return(
-                        <li key={posts.data.id}>
-                            <h2><a href={posts.data.url} target="_blank">{posts.data.title}</a></h2>
-                            <Link to={`subreddit/${posts.data.subreddit}`}>{posts.data.subreddit_name_prefixed}</Link>
+                        <article key={posts.data.id}>
+                            <h2><a className="link-reddit" href={posts.data.url} target="_blank">{posts.data.title}</a></h2>
+                            <Link className="link-subreddit" to={`subreddit/${posts.data.subreddit}`}><strong>{posts.data.subreddit_name_prefixed}</strong></Link>
                             <p>Comments {posts.data.num_comments} - Ups {posts.data.ups}</p>
-                        </li>
+                        </article>
                     )})
                     }
-                </ul>
+
             </>
             }
         </div>
