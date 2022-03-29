@@ -25,6 +25,7 @@ const Subreddit = () => {
         <div>
             {subreddit &&
             <>
+                <section>
                 <article>
                     <h2>Title</h2>
                     <p>{subreddit.data.title}</p>
@@ -33,11 +34,11 @@ const Subreddit = () => {
                     <h2>Number of subscribers</h2>
                     <p>{subreddit.data.subscribers}</p>
                 </article>
+                </section>
             </>
             }
-                <img src={back} alt="back-button"/><Link to="/">Take me back</Link>
-
-                    </div>
+            <img src={back} alt="back-button"/><Link to="/">Take me back</Link>
+                </div>
     );
 
 };

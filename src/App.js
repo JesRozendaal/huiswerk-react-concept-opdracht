@@ -29,6 +29,9 @@ import Logo from "./assets/logo.png";
 // 4. Zorg ervoor dat de juiste informatie op de pagina te zien is.
 // 5. Maak de take me back link.
 
+// Opdracht 5:
+// Stylen maar!
+
 function App() {
   return (
     <div>
@@ -53,22 +56,22 @@ function App() {
                     </li>
                     </ul>
                 </nav>
-            </div>
-            <div className="header-content">
-                {/*<img src={Logo} alt="Reddit logo" className="reddit-logo"/>*/}
-                {/*<h1>Reddit</h1>*/}
+                <div className="header-content">
+                    <img src={Logo} alt="Reddit logo" className="reddit-logo"/>
+                    <h1>Reddit</h1>
+                </div>
             </div>
         </header>
 
-        <main>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path={"/subreddit/:subredditId"}>
-          <Subreddit />
-        </Route>
-      </Switch>
+        <main className="outer-container">
+            <Switch>
+                <Route exact path="/">
+                    <Home />
+                </Route>
+                <Route path={"/subreddit/:subredditId"}>
+                    <Subreddit />
+                </Route>
+            </Switch>
         </main>
     </div>
   );
