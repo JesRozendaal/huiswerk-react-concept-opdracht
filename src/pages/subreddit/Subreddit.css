@@ -1,0 +1,17 @@
+h2 {
+    padding-top: 10px;
+}
+
+.subreddit-page {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.p-subreddit {
+    padding-top: 10px;
+}
+
+.link-back {
+    color: #dd3038;
+}

@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {useParams, Link} from "react-router-dom";
 import axios from "axios";
-import back from '../../assets/back.svg'
+import {ReactComponent as Back} from "../../assets/back.svg";
+import './Subreddit.css'
+import Header from "../../components/header/Header";
 
 const Subreddit = () => {
     const[subreddit, setSubreddit] = useState();
@@ -19,26 +21,46 @@ const Subreddit = () => {
         }
 
         fetchData();
-    },[]);
+    },[subredditId]);
 
     return (
-        <div>
+        <>
+        <header className="outer-container">
+            {subreddit &&
+            <Header
+                text={subreddit.data.title}
+                subtext="subreddit specifications"
+            />
+            }
+        </header>
+            <main className="outer-container">
+                <div className="inner-container">
             {subreddit &&
             <>
                 <section>
-                <article>
-                    <h2>Title</h2>
-                    <p>{subreddit.data.title}</p>
-                    <h2>Description</h2>
-                    <p>{subreddit.data.public_description}</p>
-                    <h2>Number of subscribers</h2>
-                    <p>{subreddit.data.subscribers}</p>
+                <article key={subreddit.data.id}>
+                    <div className="subreddit-page">
+                        <h2>Title</h2>
+                        <p className="p-subreddit">{subreddit.data.title}</p>
+                    </div>
+                    <div className="subreddit-page">
+                        <h2>Description</h2>
+                        <p className="p-subreddit">{subreddit.data.public_description}</p>
+                    </div>
+                    <div className="subreddit-page">
+                        <h2>Number of subscribers</h2>
+                        <p className="p-subreddit">{subreddit.data.subscribers}</p>
+                    </div>
                 </article>
                 </section>
             </>
             }
-            <img src={back} alt="back-button"/><Link to="/">Take me back</Link>
+            <div className="back-button">
+                <Back /><Link className="link-back" to="/"><strong>Take me back</strong></Link>
+            </div>
                 </div>
+            </main>
+        </>
     );
 
 };

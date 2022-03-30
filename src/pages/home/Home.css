@@ -1,3 +1,8 @@
+h6 {
+    display: flex;
+    justify-content: center;
+}
+
 .link-reddit {
     color: #292929;
     text-decoration: none;
@@ -9,7 +14,10 @@
 
 .container-little-box {
     background-color: #FFFFFF;
-    border: 1px dotted blue;
+    width: 300px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
 .container-text {
@@ -19,7 +27,18 @@
     padding-bottom: 50px;
 }
 
-h6 {
+.container-title {
     display: flex;
-    justify-content: center;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.lower-box {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.p-home {
+    font-size: 12px;
 }

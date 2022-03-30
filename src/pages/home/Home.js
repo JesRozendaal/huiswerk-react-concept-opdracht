@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import './Home.css'
 import axios from "axios";
 import {Link} from "react-router-dom";
+import Header from "../../components/header/Header";
+import Logo from "../../assets/logo.png";
 
 const Home = () => {
 const [redditPost, setRedditPost] =useState(null);
@@ -21,6 +23,14 @@ const [redditPost, setRedditPost] =useState(null);
     },[]);
 
     return (
+        <>
+            <header className="outer-container">
+                <Header
+                img={Logo}
+                text="Reddit"
+                />
+            </header>
+            <main className="outer-container">
         <div className="inner-container">
             {redditPost &&
             <>
@@ -32,18 +42,22 @@ const [redditPost, setRedditPost] =useState(null);
                 </section>
                     {redditPost.map((posts) => {
                     return(
-                        <section className="container-little-box">
-                            <article key={posts.data.id}>
-                                <h3 className="container-title"><a className="link-reddit" href={posts.data.url} target="_blank">{posts.data.title}</a></h3>
-                                <Link className="link-subreddit" to={`subreddit/${posts.data.subreddit}`}><strong>{posts.data.subreddit_name_prefixed}</strong></Link>
-                                <p>Comments {posts.data.num_comments} - Ups {posts.data.ups}</p>
-                            </article>
-                        </section>
+                        <ul key={posts.data.created}>
+                            <li className="container-little-box">
+                                <h3 className="container-title"><a className="link-reddit" href={posts.data.url} target="_blank" rel="noreferrer">{posts.data.title}</a></h3>
+                                <div className="lower-box">
+                                    <Link className="link-subreddit" to={`subreddit/${posts.data.subreddit}`}><strong>{posts.data.subreddit_name_prefixed}</strong></Link>
+                                    <p className="p-home">Comments {posts.data.num_comments} - Ups {posts.data.ups}</p>
+                                </div>
+                            </li>
+                        </ul>
                     )})
                     }
             </>
             }
         </div>
+            </main>
+        </>
     );
 };
 
