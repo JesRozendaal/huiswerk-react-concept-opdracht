@@ -1,0 +1,44 @@
+h6 {
+    display: flex;
+    justify-content: center;
+}
+
+.link-reddit {
+    color: #292929;
+    text-decoration: none;
+}
+
+.link-subreddit {
+    color: #dd3038;
+}
+
+.container-little-box {
+    background-color: #FFFFFF;
+    width: 300px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-text {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.container-title {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.lower-box {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.p-home {
+    font-size: 12px;
+}
